@@ -1,4 +1,4 @@
-import EventSection from "./components/event-section";
+import EventSection from "../components/event-section";
 
 const events = [
   {
