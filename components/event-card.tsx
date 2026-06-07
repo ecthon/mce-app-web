@@ -21,8 +21,7 @@ export default function EventCard({
 }: EventCardProps) {
   return (
     <article className={className ?? ""}>
-      <button
-        type="button"
+      <div
         className="flex w-full p-2 bg-zinc-50 border border-zinc-100 rounded-xl gap-3 text-left cursor-pointer transition hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
       >
         <figure className="flex h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-zinc-100">
@@ -45,7 +44,7 @@ export default function EventCard({
           </div>
           <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="text-zinc-500" strokeWidth={2} />
         </div>
-      </button>
+      </div>
     </article>
   );
 }
