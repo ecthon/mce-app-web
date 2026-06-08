@@ -8,13 +8,19 @@ import Link from "next/link";
 
 export default function EventDetailsPage() {
   return (
-    <main className="flex flex-col w-full min-h-screen bg-zinc-500 text-zinc-900">
+    <main className="flex flex-col w-full min-h-screen text-zinc-900">
       <div className="flex w-full h-80 bg-zinc-100 px-5">
         <header className=" flex items-center w-full h-12 mt-6">
           <Link href="/events" className="flex w-12 h-12 bg-black/15 rounded-full items-center justify-center">
             <HugeiconsIcon icon={ArrowLeft02Icon} className=" size-6 text-white" strokeWidth={2} />
           </Link>
         </header>
+      </div>
+      <div className="flex flex-col w-full h-full -mt-5 p-5 rounded-tl-2xl rounded-tr-2xl bg-white">
+        <div className="flex flex-col w-full h-full gap-3">
+          <h1 className="text-xl font-bold">Churrasquinho no espeto</h1>
+          <p className="text-sm text-zinc-500">Event description goes here. This is a placeholder for the event details.</p>
+        </div>
       </div>
     </main>
   );
