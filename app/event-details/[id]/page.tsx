@@ -21,6 +21,17 @@ export default function EventDetailsPage() {
           <h1 className="text-xl font-bold">Churrasquinho no espeto</h1>
           <p className="text-sm text-zinc-500">Event description goes here. This is a placeholder for the event details.</p>
         </div>
+
+        <div className="flex flex-col w-full h-12 mt-10">
+          <div className="flex w-full h-52 border rounded-xl p-2">
+            <p className="flex text-md font-semibold">Espetinho de carne</p>
+            <div className="flex w-full h-8 mt-auto gap-2 items-center justify-end">
+              <Button>+</Button>
+              <input type="number" className="w-16 h-8 border rounded-md text-center" value={0} readOnly />
+              <Button>-</Button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
