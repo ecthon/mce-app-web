@@ -1,6 +1,4 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import { ArrowLeft02Icon } from "@hugeicons/core-free-icons";
+import { Add01Icon, ArrowLeft02Icon, Remove01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -22,16 +20,24 @@ export default function EventDetailsPage() {
           <p className="text-sm text-zinc-500">Event description goes here. This is a placeholder for the event details.</p>
         </div>
 
-        <div className="flex flex-col w-full h-12 mt-10">
-          <div className="flex w-full h-52 border rounded-xl p-2">
-            <p className="flex text-md font-semibold">Espetinho de carne</p>
-            <div className="flex w-full h-8 mt-auto gap-2 items-center justify-end">
-              <Button>+</Button>
-              <input type="number" className="w-16 h-8 border rounded-md text-center" value={0} readOnly />
-              <Button>-</Button>
+        <form className="flex flex-col w-full h-12 mt-10 rounded-lg items-center justify-center">
+          <div className="flex justify-between w-full items-center border border-zinc-300 rounded-lg px-3 py-3">
+            <div className="flex flex-col">
+              <p className="text-md text-zinc-400 font-semibold">Espetinho de carne</p>
+              <p className="text-xs font-bold">R$ 20,00</p>
+            </div>
+            <div className="flex items-center bg-zinc-200 py-1 px-1 rounded-lg">
+              <Button variant="ghost" size="sm">
+                <HugeiconsIcon icon={Remove01Icon} className="size-4 text-zinc-400" strokeWidth={2} />
+              </Button>
+              <input type="number" className="w-6 h-6 text-center" defaultValue={0} min={0} max={5} />
+              <Button variant="ghost" size="sm">
+                <HugeiconsIcon icon={Add01Icon} className="size-4 text-zinc-400" strokeWidth={2} />
+              </Button>
             </div>
           </div>
-        </div>
+        </form>
+
       </div>
     </main>
   );
