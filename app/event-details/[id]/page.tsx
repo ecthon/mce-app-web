@@ -22,10 +22,10 @@ export default function EventDetailsPage() {
 
         <form className="flex flex-col w-full h-auto mt-10 rounded-lg gap-2 items-center justify-center">
           {Array.from({ length: 5 }).map((_, index) => (
-            <div key={index} className="flex justify-between w-full items-center border border-zinc-100 rounded-lg px-3 py-3">
+            <div key={index} className="flex justify-between w-full items-center bg-zinc-50 border border-zinc-100 rounded-lg px-3 py-3">
               <div className="flex flex-col">
-                <p className="text-md font-semibold">Espetinho de carne simples</p>
-                <p className="text-xs text-green-300 font-bold">R$ 20,00</p>
+                <p className="text-[14px] font-semibold">Espetinho de carne simples</p>
+                <p className="text-[11px] font-semibold text-zinc-500">R$ 20,00</p>
               </div>
               <div className="flex items-center bg-zinc-100 py-1 px-1 rounded-lg">
                 <Button variant="ghost" size="sm">
