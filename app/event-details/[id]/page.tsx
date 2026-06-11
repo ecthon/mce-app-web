@@ -1,4 +1,4 @@
-import { Add01Icon, ArrowLeft02Icon, Remove01Icon } from "@hugeicons/core-free-icons";
+import { Add01Icon, ArrowLeft02Icon, CoinsDollarIcon, Remove01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -23,9 +23,13 @@ export default function EventDetailsPage() {
         <form className="flex flex-col w-full h-auto mt-10 rounded-lg gap-2 items-center justify-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <div key={index} className="flex justify-between w-full items-center bg-zinc-50 border border-zinc-100 rounded-lg px-3 py-3">
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-1">
                 <p className="text-[14px] font-semibold">Espetinho de carne simples</p>
-                <p className="text-[11px] font-semibold text-zinc-500">R$ 20,00</p>
+                <div className="flex items-center gap-1">
+                  <HugeiconsIcon icon={CoinsDollarIcon} className="size-4 text-zinc-400" strokeWidth={2} />
+                  <p className="text-[11px] font-semibold text-zinc-500">
+                    R$ 20,00</p>
+                </div>
               </div>
               <div className="flex items-center bg-zinc-100 py-1 px-1 rounded-lg">
                 <Button variant="ghost" size="sm">
