@@ -7,27 +7,27 @@ import Link from "next/link";
 export default function EventDetailsPage() {
   return (
     <main className="flex flex-col w-full min-h-screen text-zinc-900">
-      <div className="flex w-full h-80 bg-zinc-100 px-5">
-        <header className=" flex items-center w-full h-12 mt-6">
+      <div className="flex w-full h-72 bg-zinc-100 px-4">
+        <header className=" flex items-center w-full h-12 mt-5">
           <Link href="/events" className="flex w-12 h-12 bg-black/15 rounded-full items-center justify-center">
             <HugeiconsIcon icon={ArrowLeft02Icon} className=" size-6 text-white" strokeWidth={2} />
           </Link>
         </header>
       </div>
-      <div className="flex flex-col w-full h-full -mt-5 p-5 rounded-tl-2xl rounded-tr-2xl bg-white">
-        <div className="flex flex-col w-full h-full gap-3">
-          <h1 className="text-xl font-bold">Churrasquinho no espeto</h1>
-          <p className="text-sm text-zinc-500">Event description goes here. This is a placeholder for the event details.</p>
+      <div className="flex flex-col w-full h-full -mt-5 p-4 rounded-tl-2xl rounded-tr-2xl bg-white">
+        <div className="flex flex-col w-full h-full gap-2">
+          <h1 className="text-lg font-extrabold">Churrasquinho no espeto</h1>
+          <p className="text-sm font-medium text-zinc-600">Event description goes here. This is a placeholder for the event details.</p>
         </div>
 
-        <form className="flex flex-col w-full h-auto mt-10 rounded-lg gap-2 items-center justify-center">
+        <form className="flex flex-col w-full h-auto mt-6 rounded-lg gap-3 items-center justify-center">
           {Array.from({ length: 5 }).map((_, index) => (
-            <div key={index} className="flex justify-between w-full items-center bg-zinc-50 border border-zinc-100 rounded-lg px-3 py-3">
-              <div className="flex flex-col gap-1">
-                <p className="text-[14px] font-semibold">Espetinho de carne simples</p>
+            <div key={index} className="flex justify-between w-full items-center bg-zinc-50 border border-zinc-100 rounded-lg px-4 py-4">
+              <div className="flex flex-col gap-2">
+                <p className="text-base font-bold">Espetinho de carne simples</p>
                 <div className="flex items-center gap-1">
-                  <HugeiconsIcon icon={CoinsDollarIcon} className="size-4 text-zinc-400" strokeWidth={2} />
-                  <p className="text-[11px] font-semibold text-zinc-500">
+                  <HugeiconsIcon icon={CoinsDollarIcon} className="size-4 text-yellow-500 bg-yellow-100 p-1 rounded-full box-content" strokeWidth={2} />
+                  <p className="text-xs font-semibold text-yellow-500">
                     R$ 20,00</p>
                 </div>
               </div>
@@ -42,7 +42,7 @@ export default function EventDetailsPage() {
               </div>
             </div>
           ))}
-          <Button className="w-full h-11 bg-indigo-600 mt-5" size="lg">
+          <Button className="w-full h-10 bg-indigo-600 mt-6 font-semibold" size="lg">
             Fazer reserva
           </Button>
         </form>
