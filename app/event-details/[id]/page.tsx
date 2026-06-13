@@ -37,14 +37,14 @@ export default function EventDetailsPage() {
         </header>
       </div>
       <div className="flex flex-col w-full h-full -mt-5 p-4 rounded-tl-2xl rounded-tr-2xl bg-white">
-        <div className="flex flex-col w-full h-full bg-zinc-50 rounded-lg p-4 border border-zinc-200 gap-2">
+        <div className="flex flex-col w-full h-full bg-zinc-50 rounded-lg p-4 border border-zinc-100 gap-2">
           <h1 className="text-lg font-extrabold">{event.title}</h1>
           <p className="text-sm font-medium text-zinc-500">{event.description}</p>
         </div>
 
         <form className="flex flex-col w-full h-auto mt-6 rounded-lg gap-3 items-center justify-center">
           {event.items.map((item, index) => (
-            <div key={index} className="flex justify-between w-full items-center border-b border-zinc-200 rounded-lg px-4 py-4">
+            <div key={index} className="flex justify-between w-full items-center border-b border-zinc-100 rounded-lg px-4 py-4">
               <div className="flex flex-col gap-2">
                 <p className="text-sm font-bold">{item.name}</p>
                 <div className="flex items-center gap-1">
