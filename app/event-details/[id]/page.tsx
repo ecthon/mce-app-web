@@ -1,3 +1,4 @@
+'use client';
 import { Add01Icon, ArrowLeft02Icon, CoinsDollarIcon, Remove01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
