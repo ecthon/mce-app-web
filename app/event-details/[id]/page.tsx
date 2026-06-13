@@ -3,6 +3,28 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+const event = {
+  id: "1",
+  title: "Churrasquinho no espeto",
+  description: "Event description goes here. This is a placeholder for the event details.",
+  items: [
+    {
+      id: "1",
+      name: "Espetinho de carne simples",
+      price: 20.00,
+    },
+    {
+      id: "2",
+      name: "Espetinho de frango",
+      price: 18.00,
+    },
+    {
+      id: "3",
+      name: "Espetinho de linguiça",
+      price: 22.00,
+    },
+  ]
+};
 
 export default function EventDetailsPage() {
   return (
@@ -15,29 +37,29 @@ export default function EventDetailsPage() {
         </header>
       </div>
       <div className="flex flex-col w-full h-full -mt-5 p-4 rounded-tl-2xl rounded-tr-2xl bg-white">
-        <div className="flex flex-col w-full h-full gap-2">
-          <h1 className="text-lg font-extrabold">Churrasquinho no espeto</h1>
-          <p className="text-sm font-medium text-zinc-600">Event description goes here. This is a placeholder for the event details.</p>
+        <div className="flex flex-col w-full h-full bg-zinc-50 rounded-lg p-4 border border-zinc-200 gap-2">
+          <h1 className="text-lg font-extrabold">{event.title}</h1>
+          <p className="text-sm font-medium text-zinc-500">{event.description}</p>
         </div>
 
         <form className="flex flex-col w-full h-auto mt-6 rounded-lg gap-3 items-center justify-center">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <div key={index} className="flex justify-between w-full items-center bg-zinc-50 border border-zinc-100 rounded-lg px-4 py-4">
+          {event.items.map((item, index) => (
+            <div key={index} className="flex justify-between w-full items-center border-b border-zinc-200 rounded-lg px-4 py-4">
               <div className="flex flex-col gap-2">
-                <p className="text-base font-bold">Espetinho de carne simples</p>
+                <p className="text-sm font-bold">{item.name}</p>
                 <div className="flex items-center gap-1">
-                  <HugeiconsIcon icon={CoinsDollarIcon} className="size-4 text-yellow-500 bg-yellow-100 p-1 rounded-full box-content" strokeWidth={2} />
-                  <p className="text-xs font-semibold text-yellow-500">
-                    R$ 20,00</p>
+                  <HugeiconsIcon icon={CoinsDollarIcon} className="size-4 text-yellow-500 bg-yellow-50 p-1 rounded-full box-content" strokeWidth={2} />
+                  <p className="text-xs font-semibold text-zinc-500">
+                    R$ {item.price.toFixed(2).replace('.', ',')}</p>
                 </div>
               </div>
-              <div className="flex items-center bg-zinc-100 py-1 px-1 rounded-lg">
+              <div className="flex items-center bg-zinc-50 py-1 px-1 rounded-lg">
                 <Button variant="ghost" size="sm">
-                  <HugeiconsIcon icon={Remove01Icon} className="size-4 text-zinc-400" strokeWidth={2} />
+                  <HugeiconsIcon icon={Remove01Icon} className="size-4 text-indigo-400" strokeWidth={2} />
                 </Button>
-                <input type="number" className="w-6 h-6 text-center" defaultValue={0} min={0} max={5} />
+                <input type="number" className="w-6 h-6 text-center font-semibold text-sm" defaultValue={0} min={0} max={5} />
                 <Button variant="ghost" size="sm">
-                  <HugeiconsIcon icon={Add01Icon} className="size-4 text-zinc-400" strokeWidth={2} />
+                  <HugeiconsIcon icon={Add01Icon} className="size-4 text-indigo-400" strokeWidth={2} />
                 </Button>
               </div>
             </div>
