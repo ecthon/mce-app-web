@@ -1,4 +1,5 @@
 'use client';
+import { useState } from "react";
 import { Add01Icon, ArrowLeft02Icon, CoinsDollarIcon, Remove01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
@@ -12,22 +13,60 @@ const event = {
     {
       id: "1",
       name: "Espetinho de carne simples",
-      price: 20.00,
+      price: 20.0,
     },
     {
       id: "2",
       name: "Espetinho de frango",
-      price: 18.00,
+      price: 18.0,
     },
     {
       id: "3",
       name: "Espetinho de linguiça",
-      price: 22.00,
+      price: 22.0,
     },
-  ]
+  ],
 };
 
 export default function EventDetailsPage() {
+  const [quantities, setQuantities] = useState<Record<string, number>>(
+    Object.fromEntries(event.items.map((item) => [item.id, 0]))
+  );
+
+  const incrementQuantity = (itemId: string) => {
+    setQuantities((prev) => {
+      const currentQuantity = prev[itemId] ?? 0;
+      if (currentQuantity >= 5) {
+        return prev;
+      }
+      return {
+        ...prev,
+        [itemId]: currentQuantity + 1,
+      };
+    });
+  };
+
+  const decrementQuantity = (itemId: string) => {
+    setQuantities((prev) => {
+      const currentQuantity = prev[itemId] ?? 0;
+      if (currentQuantity <= 0) {
+        return prev;
+      }
+      return {
+        ...prev,
+        [itemId]: currentQuantity - 1,
+      };
+    });
+  };
+
+  const handleQuantityChange = (itemId: string, value: number) => {
+    const normalized = Math.max(0, Math.min(5, Number.isNaN(value) ? 0 : value));
+    setQuantities((prev) => ({
+      ...prev,
+      [itemId]: normalized,
+    }));
+  };
+
   return (
     <main className="flex flex-col w-full min-h-screen text-zinc-900">
       <div className="flex w-full h-72 bg-zinc-100 px-4">
@@ -55,11 +94,25 @@ export default function EventDetailsPage() {
                 </div>
               </div>
               <div className="flex items-center bg-zinc-50 py-1 px-1 rounded-lg">
-                <Button variant="ghost" size="sm">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => decrementQuantity(item.id)}
+                  type="button"
+                >
                   <HugeiconsIcon icon={Remove01Icon} className="size-4 text-indigo-400" strokeWidth={2} />
                 </Button>
-                <input type="number" className="w-6 h-6 text-center font-semibold text-sm" defaultValue={0} min={0} max={5} />
-                <Button variant="ghost" size="sm">
+                <span
+                  className="w-6 h-6 text-center font-semibold text-sm"
+                >
+                  {quantities[item.id] ?? 0}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => incrementQuantity(item.id)}
+                  type="button"
+                >
                   <HugeiconsIcon icon={Add01Icon} className="size-4 text-indigo-400" strokeWidth={2} />
                 </Button>
               </div>
