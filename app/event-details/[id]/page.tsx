@@ -132,29 +132,24 @@ export default function EventDetailsPage() {
             </div>
           ))}
 
-          <div className="mt-4 w-full rounded-lg bg-white p-4 border border-zinc-100 shadow-sm">
-            <h2 className="text-base font-semibold text-zinc-900">Resumo do pedido</h2>
-            <div className="mt-3 flex flex-col gap-2 text-sm text-zinc-600">
-              {selectedItems.length > 0 ? (
-                selectedItems.map((item) => (
+          {selectedItems.length > 0 && (
+            <div className="mt-4 w-full rounded-lg bg-white p-4 border border-zinc-100 shadow-sm">
+              <h2 className="text-base font-semibold text-zinc-900">Resumo do pedido</h2>
+              <div className="mt-3 flex flex-col gap-2 text-sm text-zinc-600">
+                {selectedItems.map((item) => (
                   <div key={item.id} className="flex justify-between">
                     <span className="text-zinc-500">{item.name}</span>
                     <span className="font-medium text-zinc-900">{quantities[item.id]}x</span>
                   </div>
-                ))
-              ) : (
-                <div className="flex justify-between">
-                  <span className="text-zinc-500">Subtotal</span>
-                  <span className="font-medium text-zinc-900">{currency(subtotal)}</span>
-                </div>
-              )}
-            </div>
+                ))}
+              </div>
 
-            <div className="mt-4 border-t pt-3 flex justify-between items-center">
-              <span className="text-lg font-extrabold">Total</span>
-              <span className="text-xl font-extrabold text-zinc-900">{currency(subtotal)}</span>
+              <div className="mt-4 border-t pt-3 flex justify-between items-center">
+                <span className="text-lg font-extrabold">Total</span>
+                <span className="text-xl font-extrabold text-zinc-900">{currency(subtotal)}</span>
+              </div>
             </div>
-          </div>
+          )}
         </form>
       </div>
 
