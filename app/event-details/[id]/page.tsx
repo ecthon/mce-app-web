@@ -75,23 +75,23 @@ export default function EventDetailsPage() {
     0
   );
 
-  const delivery = 0; // grátis no exemplo
-  const serviceFee = subtotal > 0 ? Math.max(0.99, +(subtotal * 0.02).toFixed(2)) : 0;
-  const coupon = subtotal > 0 ? 10 : 0;
-  const total = Math.max(0, subtotal + delivery + serviceFee - coupon);
+  // const delivery = 0; // grátis no exemplo
+  // const serviceFee = subtotal > 0 ? Math.max(0.99, +(subtotal * 0.02).toFixed(2)) : 0;
+  // const coupon = subtotal > 0 ? 10 : 0;
+  // const total = Math.max(0, subtotal + delivery + serviceFee - coupon);
   const selectedItems = event.items.filter((item) => (quantities[item.id] ?? 0) > 0);
 
   return (
     <main className="flex flex-col w-full min-h-screen text-zinc-900 bg-zinc-50">
-      <div className="h-56 bg-gradient-to-b from-white to-zinc-100">
-        <header className=" absolute left-4 top-6">
+      <div className=" flex h-56">
+        <header className=" flex w-full p-4">
           <Link href="/" className="flex w-10 h-10 bg-white/70 backdrop-blur rounded-full items-center justify-center shadow-sm">
             <HugeiconsIcon icon={ArrowLeft02Icon} className="w-5 h-5 text-zinc-900" strokeWidth={2} />
           </Link>
         </header>
       </div>
 
-      <div className="mt-6 p-4 rounded-t-2xl bg-white min-h-screen">
+      <div className="-mt-6 p-4 rounded-t-2xl min-h-screen">
         <div className="w-full bg-white shadow-sm rounded-xl p-5 border border-zinc-100">
           <h1 className="text-2xl font-extrabold text-zinc-900">{event.title}</h1>
           <p className="mt-1 text-sm font-medium text-zinc-500">{event.description}</p>
@@ -155,7 +155,6 @@ export default function EventDetailsPage() {
               <span className="text-xl font-extrabold text-zinc-900">{currency(subtotal)}</span>
             </div>
           </div>
-
         </form>
       </div>
 
@@ -163,7 +162,7 @@ export default function EventDetailsPage() {
         <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
           <div>
             <div className="text-sm text-zinc-500">Total a ser pago</div>
-            <div className="text-lg font-extrabold text-zinc-900">{currency(total)} / {Object.values(quantities).reduce((a, b) => a + b, 0)} item</div>
+            <div className="text-lg font-extrabold text-zinc-900">{currency(subtotal)} / {Object.values(quantities).reduce((a, b) => a + b, 0)} item</div>
           </div>
           <div className="w-44">
             <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold h-12 rounded-lg">Continuar</Button>
