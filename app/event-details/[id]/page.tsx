@@ -153,7 +153,7 @@ export default function EventDetailsPage() {
         </form>
       </div>
 
-      <div className="fixed left-0 right-0 bottom-0 bg-white border-t border-zinc-100 p-3 shadow-[0_-10px_30px_rgba(15,23,42,0.08)]">
+      <div className="fixed left-0 right-0 bottom-0 bg-white border-t border-zinc-100 p-3 shadow-[0_-2px_30px_rgba(15,23,42,0.08)]">
         <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
           <div>
             <div className="text-sm text-zinc-500">Total a ser pago</div>
