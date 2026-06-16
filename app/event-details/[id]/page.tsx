@@ -82,7 +82,7 @@ export default function EventDetailsPage() {
   const selectedItems = event.items.filter((item) => (quantities[item.id] ?? 0) > 0);
 
   return (
-    <main className="flex flex-col w-full min-h-screen text-zinc-900 bg-zinc-50">
+    <main className="flex flex-col w-full min-h-screen text-zinc-900">
       <div className=" flex h-56">
         <header className=" flex w-full p-4">
           <Link href="/" className="flex w-10 h-10 bg-white/70 backdrop-blur rounded-full items-center justify-center shadow-sm">
@@ -99,7 +99,7 @@ export default function EventDetailsPage() {
 
         <form className="flex flex-col w-full h-auto mt-6 rounded-lg gap-3">
           {event.items.map((item) => (
-            <div key={item.id} className="flex justify-between w-full items-center border-b border-zinc-100 px-4 py-4">
+            <div key={item.id} className="flex justify-between w-full items-center border border-zinc-200 rounded-lg px-4 py-4">
               <div className="flex flex-col gap-1">
                 <p className="text-base font-semibold text-zinc-900">{item.name}</p>
                 <div className="flex items-center gap-2">
@@ -153,7 +153,7 @@ export default function EventDetailsPage() {
         </form>
       </div>
 
-      <div className="fixed left-0 right-0 bottom-0 bg-white border-t border-zinc-100 p-3">
+      <div className="fixed left-0 right-0 bottom-0 bg-white border-t border-zinc-100 p-3 shadow-[0_-10px_30px_rgba(15,23,42,0.08)]">
         <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
           <div>
             <div className="text-sm text-zinc-500">Total a ser pago</div>
