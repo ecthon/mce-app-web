@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowRight01Icon, Clock01Icon } from "@hugeicons/core-free-icons";
+import { ArrowRight01Icon, Calendar05Icon, Clock01Icon } from "@hugeicons/core-free-icons";
 
 interface EventCardProps {
   imageSrc: string;
@@ -31,8 +31,13 @@ export default function EventCard({
         <div className="flex flex-1 items-center justify-between">
           <div className="flex flex-1 flex-col gap-2">
             <div>
-              <span className="text-[14px] text-zinc-500">{dateLabel}</span>
-              <p className="text-[16px] font-bold">{title}</p>
+              <p className="text-md font-bold">{title}</p>
+              <div className="flex items-center gap-1">
+                <HugeiconsIcon icon={Calendar05Icon} size={16} className="text-zinc-500" strokeWidth={2} />
+                <span className="text-[12px] font-semibold text-zinc-500">
+                  {dateLabel}
+                </span>
+              </div>
             </div>
             <div className="flex items-center gap-1">
               <span className="text-[14px] text-zinc-500">Encerra em</span>
