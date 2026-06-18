@@ -25,7 +25,7 @@ export default function EventCard({
         className="flex w-full p-2 bg-zinc-50 border border-zinc-100 rounded-xl gap-3 text-left cursor-pointer transition hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
       >
         <figure className="flex h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-zinc-100">
-          <Image src={imageSrc} alt={alt} width={96} height={96} className="object-cover w-full h-full" />
+          <Image src={imageSrc} alt={alt} width={96} height={96} loading="eager" className="object-cover w-full h-full" />
         </figure>
 
         <div className="flex flex-1 items-center justify-between">
