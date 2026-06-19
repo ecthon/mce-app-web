@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", plusJakartaSans.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background">{children}</body>
     </html>
   );
 }
