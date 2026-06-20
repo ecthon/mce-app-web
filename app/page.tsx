@@ -3,10 +3,10 @@ import EventSection from "../components/event-section";
 const events = [
   {
     id: 1,
-    imageSrc: "/default-img.png",
+    imageSrc: "/churrasquinho.png",
     alt: "Event Image",
     dateLabel: "22/07/2026",
-    title: "Festival de pizzas",
+    title: "Churrasco no espeto",
     endsIn: "04:35:15",
   },
   {
