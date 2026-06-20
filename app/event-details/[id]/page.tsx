@@ -103,15 +103,15 @@ export default function EventDetailsPage() {
               <div className="flex flex-col gap-1">
                 <p className="text-base font-semibold text-zinc-900">{item.name}</p>
                 <div className="flex items-center gap-2">
-                  <HugeiconsIcon icon={CoinsDollarIcon} className="w-5 h-5 text-yellow-600 bg-yellow-50 p-1 rounded-full" strokeWidth={2} />
-                  <p className="text-sm font-medium text-zinc-600">{currency(item.price)}</p>
+                  <HugeiconsIcon icon={CoinsDollarIcon} className="w-6 h-6 text-zinc-500 bg-zinc-100 p-1 rounded-full" strokeWidth={3} />
+                  <p className="text-sm font-semibold text-zinc-500">{currency(item.price)}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 py-1 px-2 bg-zinc-50 rounded-lg">
                 <button
                   onClick={() => decrementQuantity(item.id)}
                   type="button"
-                  className="w-8 h-8 flex items-center justify-center rounded-md text-rose-500"
+                  className="w-8 h-8 flex items-center justify-center rounded-md text-indigo-500"
                 >
                   <HugeiconsIcon icon={Remove01Icon} className="w-4 h-4" strokeWidth={2} />
                 </button>
@@ -124,7 +124,7 @@ export default function EventDetailsPage() {
                 <button
                   onClick={() => incrementQuantity(item.id)}
                   type="button"
-                  className="w-8 h-8 flex items-center justify-center rounded-md text-rose-500"
+                  className="w-8 h-8 flex items-center justify-center rounded-md text-indigo-500"
                 >
                   <HugeiconsIcon icon={Add01Icon} className="w-4 h-4" strokeWidth={2} />
                 </button>
@@ -160,7 +160,7 @@ export default function EventDetailsPage() {
             <div className="text-lg font-extrabold text-zinc-900">{currency(subtotal)} / {Object.values(quantities).reduce((a, b) => a + b, 0)} item</div>
           </div>
           <div className="w-44">
-            <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold h-12 rounded-lg">Continuar</Button>
+            <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold h-12 rounded-lg">Continuar</Button>
           </div>
         </div>
       </div>

@@ -32,7 +32,12 @@ export default function EventSection({ events }: EventSectionProps) {
       </div>
 
       <div className="flex flex-col w-full h-auto">
-        <h1 className="text-md font-bold">Próximos eventos</h1>
+        <div className="flex flex-col gap-0">
+          <h1 className="text-md font-bold">Próximos eventos</h1>
+          <p className="text-sm text-zinc-500">
+            Veja os eventos que estão por vir
+          </p>
+        </div>
 
         <div className="flex flex-col w-full h-full mt-5 gap-2">
           {events.map((event) => (

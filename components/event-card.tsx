@@ -34,7 +34,7 @@ export default function EventCard({
               <p className="text-md font-bold">{title}</p>
               <div className="flex items-center gap-1">
                 <HugeiconsIcon icon={Calendar05Icon} size={16} className="text-zinc-500" strokeWidth={2} />
-                <span className="text-xs font-semibold text-zinc-500">
+                <span className="text-xs font-bold text-zinc-500">
                   {dateLabel}
                 </span>
               </div>
