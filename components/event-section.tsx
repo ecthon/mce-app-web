@@ -31,7 +31,7 @@ export default function EventSection({ events }: EventSectionProps) {
         </div>
       </div>
 
-      <div className="flex flex-col w-full h-auto">
+      {/* <div className="flex flex-col w-full h-auto">
         <div className="flex flex-col gap-0">
           <h1 className="text-md font-bold">Próximos eventos</h1>
           <p className="text-sm text-zinc-500">
@@ -49,7 +49,7 @@ export default function EventSection({ events }: EventSectionProps) {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
