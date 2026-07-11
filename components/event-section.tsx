@@ -40,8 +40,13 @@ export default function EventSection({ events }: EventSectionProps) {
         </div>
 
         <div className="flex flex-col w-full h-full mt-5 gap-2">
-          {events.map((event) => (
-            <EventCard key={event.id} {...event} />
+          {[1,2].map((event) => (
+            <div key={event} className="w-full bg-white rounded-xl p-5 border border-zinc-100">
+              <h2 className="text-lg font-bold">Próximo Evento</h2>
+              <p className="text-sm text-zinc-500">
+                Descrição do próximo evento
+              </p>
+            </div>
           ))}
         </div>
       </div>
